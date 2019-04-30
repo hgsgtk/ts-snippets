@@ -1,3 +1,10 @@
+class Student {
+    fullName: string;
+    constructor(public familyName: string, public middleInitial: string, public givenName: string) {
+        this.fullName = familyName + " " + middleInitial + " " + givenName;
+    }
+}
+
 interface Person {
     familyName: string;
     givenName: string;
@@ -7,7 +14,6 @@ function greeter(person: Person) {
     return "Hello, " + person.familyName + " " + person.givenName;
 }
 
-// 明示的なimplementsは不要
-let user = { familyName: "Jane", givenName: "User" };
+let user = new Student("Jane", "M.", "User");
 
 document.body.innerHTML = greeter(user);
