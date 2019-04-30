@@ -1,5 +1,6 @@
 function greeter(person) {
-    return "Hello, " + person;
+    return "Hello, " + person.familyName + " " + person.givenName;
 }
-var user = [0, 1, 2];
+// 明示的なimplementsは不要
+var user = { familyName: "Jane", givenName: "User" };
 document.body.innerHTML = greeter(user);
