@@ -1,7 +1,7 @@
 // https://medium.freecodecamp.org/how-to-wrap-your-head-around-typescript-generics-8d243f7de78
 
 // Example1: any
-const wrapInObj = (myValue: any) => {
+const wrapInObj = <T>(myValue: T) => {
     return {
         value: myValue,
     }
@@ -9,5 +9,6 @@ const wrapInObj = (myValue: any) => {
 
 const wrappedValue = wrapInObj(12345);
 
-// split() is not function because the type is any.
+// Property 'split' does not exist on type 'number'.
+// the compiler gives a helpful warning than using any type.
 wrappedValue.value.split();

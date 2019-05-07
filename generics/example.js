@@ -6,4 +6,5 @@ var wrapInObj = function (myValue) {
     };
 };
 var wrappedValue = wrapInObj(12345);
+// Property 'split' does not exist on type 'number'
 wrappedValue.value.split();
