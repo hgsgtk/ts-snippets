@@ -1,0 +1,17 @@
+<script>
+    var worker = new Worker('worker.js')
+
+    var startTime;
+    var data = new Array(10000000)
+
+    worker.addEventListener('message', function (event) {
+        if (event.data === 'ready') {
+            startTime = performance.now()
+            worker.postMessage(data);
+        } else {
+            console.log(performance.now() - startTime)
+        }
+    });
+
+    worker.postMessage('ready');
+</script>
