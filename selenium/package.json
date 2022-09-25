@@ -11,7 +11,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build",
+    "run": "yarn run build && node dist/index.js"
   },
   "dependencies": {
     "selenium-webdriver": "^4.4.0"
