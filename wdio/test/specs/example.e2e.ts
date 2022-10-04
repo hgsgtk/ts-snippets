@@ -10,5 +10,17 @@ describe('My Login application', () => {
         await expect($('#flash')).toHaveTextContaining(
             'You logged into a secure area!');
     });
+
+    it('session.Subscribed', () => {
+        // await browser.send({
+        //     method: 'session.subscribe',
+        //     param: { events: ['log.entryAdded']}
+        // })
+
+        // browser.send({
+        //     method: 'session.subscribe',
+        //     params: { events: ['log.entryAdded'] }
+        // })
+    })
 });
 
