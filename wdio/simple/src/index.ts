@@ -16,14 +16,16 @@ import { remote } from "webdriverio";
     //         browserName: 'chrome'
     //     }
     // })
+
+    try {
+        await client.navigateTo('http://www.google.com/ncr')
+
+        const searchInput = await client.findElement('css selector', '#lst-ib')
+        await client.elementClick(searchInput['element-6066-11e4-a52e-4f735466cecf'])
     
-    await client.navigateTo('https://www.google.com/ncr')
-
-    const searchInput = await client.findElement('css selector', '#lst-ib')
-    await client.elementClick(searchInput['element-6066-11e4-a52e-4f735466cecf'])
-
-    console.log(await client.getTitle())
-
-    await client.deleteSession()
+        console.log(await client.getTitle())    
+    } finally {
+        await client.deleteSession()
+    }
 })();
 
