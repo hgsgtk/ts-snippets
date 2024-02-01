@@ -2,20 +2,29 @@
 // The original code does not work. I modified it to work with the latest version of Appium.
 const wdio = require('webdriverio')
 
+// For local Appium server
+// const opts = {
+//     path: '/wd/hub',
+//     port: 4723,
+//     capabilities: {
+//         // Capabilities: https://appium.io/docs/en/2.2/guides/caps/
+//         platformName: 'Android',
+//         browserName: 'Chrome',
+
+//         "appium:deviceName": 'Android Emulator',
+//         "appium:automationName": 'UiAutomator2',
+//         // An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 2.1. The following are available:
+//         //  emulator-5554 (14) <- 14
+//         "appium:platformVersion": '14',
+
+//     }
+// }
+// For AWS Device Farm
 const opts = {
     path: '/wd/hub',
     port: 4723,
     capabilities: {
-        // Capabilities: https://appium.io/docs/en/2.2/guides/caps/
-        platformName: 'Android',
-        browserName: 'Chrome',
-
-        "appium:deviceName": 'Android Emulator',
-        "appium:automationName": 'UiAutomator2',
-        // An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 2.1. The following are available:
-        //  emulator-5554 (14) <- 14
-        "appium:platformVersion": '14',
-
+        // Must be an empty object.
     }
 }
 
